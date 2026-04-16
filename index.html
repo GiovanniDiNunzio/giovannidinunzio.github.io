@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -35,7 +35,6 @@
       overflow-x: hidden;
     }
  
-    /* subtle grain overlay */
     body::before {
       content: '';
       position: fixed; inset: 0;
@@ -52,21 +51,10 @@
       max-width: 760px;
     }
  
-    /* ── HERO ── */
     .hero {
       text-align: left;
       margin-bottom: 72px;
       animation: fadeUp .9s ease both;
-    }
- 
-    .hero .eyebrow {
-      font-family: 'DM Sans', sans-serif;
-      font-size: .75rem;
-      font-weight: 500;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 20px;
     }
  
     .hero h1 {
@@ -99,7 +87,6 @@
       opacity: .6;
     }
  
-    /* ── CARDS ── */
     .cards {
       display: flex;
       flex-direction: column;
@@ -112,11 +99,10 @@
       border: 1px solid var(--border);
       background: var(--surface);
       cursor: pointer;
-      transition: height .45s cubic-bezier(.4,0,.2,1),
-                  border-color .3s ease,
-                  background .3s ease;
+      transition: height .45s cubic-bezier(.4,0,.2,1), border-color .3s ease, background .3s ease;
       animation: fadeUp .8s ease both;
     }
+
     .card:nth-child(1) { animation-delay: .15s; border-radius: 8px 8px 2px 2px; }
     .card:nth-child(2) { animation-delay: .25s; border-radius: 2px; }
     .card:nth-child(3) { animation-delay: .35s; border-radius: 2px; }
@@ -128,9 +114,7 @@
       background: #1a1914;
     }
  
-    .card-inner {
-      padding: 0 32px;
-    }
+    .card-inner { padding: 0 32px; }
  
     .card-header {
       height: var(--card-h);
@@ -140,33 +124,24 @@
     }
  
     .card-icon {
-      width: 38px;
-      height: 38px;
+      width: 38px; height: 38px;
       border-radius: 6px;
       background: var(--accent-dim);
       border: 1px solid rgba(201,169,110,.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
-      transition: background .3s;
     }
-    .card:hover .card-icon {
-      background: rgba(201,169,110,.22);
-    }
+ 
     .card-icon svg {
       width: 18px; height: 18px;
       stroke: var(--accent);
       fill: none;
       stroke-width: 1.6;
-      stroke-linecap: round;
-      stroke-linejoin: round;
     }
  
     .card-title {
       font-family: 'Playfair Display', serif;
       font-size: 1.05rem;
-      font-weight: 400;
       color: var(--text);
       flex: 1;
     }
@@ -176,15 +151,10 @@
       stroke: var(--muted);
       fill: none;
       stroke-width: 1.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      transition: transform .4s cubic-bezier(.4,0,.2,1), stroke .3s;
-      flex-shrink: 0;
+      transition: transform .4s cubic-bezier(.4,0,.2,1);
     }
-    .card:hover .card-arrow {
-      transform: rotate(90deg);
-      stroke: var(--accent);
-    }
+
+    .card:hover .card-arrow { transform: rotate(90deg); stroke: var(--accent); }
  
     .card-body {
       padding: 4px 0 28px;
@@ -192,10 +162,8 @@
       transform: translateY(10px);
       transition: opacity .3s ease .15s, transform .35s ease .1s;
     }
-    .card:hover .card-body {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+    .card:hover .card-body { opacity: 1; transform: translateY(0); }
  
     .card-body p {
       font-size: .95rem;
@@ -205,11 +173,7 @@
       margin-bottom: 20px;
     }
  
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
  
     .tag {
       font-size: .72rem;
@@ -221,17 +185,20 @@
       border: 1px solid rgba(201,169,110,.2);
       padding: 5px 12px;
       border-radius: 3px;
+      text-decoration: none;
+    }
+
+    .tag.highlight {
+      background: #0077b5;
+      color: white;
+      border: none;
     }
  
-    /* ── FOOTER ── */
     .footer {
       margin-top: 80px;
       text-align: center;
       font-size: .78rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
       color: #3a3830;
-      animation: fadeUp 1s ease .5s both;
     }
  
     @keyframes fadeUp {
@@ -243,22 +210,17 @@
 <body>
   <div class="wrapper">
  
-    <!-- HERO -->
     <header class="hero">
-      <p class="eyebrow"></p>
       <h1>Hello, my name is<br/><em>Giovanni</em></h1>
       <div class="divider"></div>
       <p>
-        On this page you can see what projects I worked on, what experience I have and you can 
-        have some insights on my education. If you want to know which project I am currently working on, you should visit
-        my GitHub. You can find my socials below.
+        On this page, you can explore my projects, professional experience, and educational background. 
+        To see what I’m currently building, head over to my GitHub. Connect with me via the socials below.
       </p>
     </header>
  
-    <!-- CARDS -->
-    <section class="cards" aria-label="Bereiche">
+    <section class="cards">
  
-      <!-- 1 -->
       <div class="card">
         <div class="card-inner">
           <div class="card-header">
@@ -270,92 +232,80 @@
           </div>
           <div class="card-body">
             <p>
-              In my late teens I decided that I wanted to learn more about computer science because 
-              the computer science class in highschool was very interesting. I then went on to study CS at ETHZ.
+              I am currently pursuing my <strong>B.Sc. in Computer Science</strong> with a focus on the Web3 ecosystem. 
+              As a Committee Member at <strong>ETH Blockchain</strong>, I help shape the future of decentralized technology. 
+              I am passionate about building on <strong>Solana</strong> and creating high-performance solutions.
             </p>
             <div class="tag-list">
               <span class="tag">Zürich</span>
-              <span class="tag">Kreativ</span>
-              <span class="tag">Neugierig</span>
+              <span class="tag">Web3</span>
+              <span class="tag">Solana</span>
             </div>
           </div>
         </div>
       </div>
  
-      <!-- 2 -->
       <div class="card">
         <div class="card-inner">
           <div class="card-header">
             <div class="card-icon">
               <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             </div>
-            <span class="card-title">Fähigkeiten</span>
+            <span class="card-title">Skillset</span>
             <svg class="card-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
           </div>
           <div class="card-body">
             <p>
-              Von Frontend bis Backend — ich arbeite full-stack und bringe
-              Ideen vom Konzept zur fertigen Anwendung. Ich lege großen Wert
-              auf sauberen Code, Performance und eine intuitive User Experience.
+              I have experience in both object-oriented and functional programming. 
+              I am deeply interested in <strong>Rust</strong> for Solana development and enjoy low-level programming with <strong>C</strong>. 
+              I also have solid foundations in mathematics and computer networks.
             </p>
             <div class="tag-list">
-              <span class="tag">HTML / CSS</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">React</span>
-              <span class="tag">Node.js</span>
-              <span class="tag">UI Design</span>
+              <span class="tag">C</span>
+              <span class="tag">Rust</span>
+              <span class="tag">TypeScript</span>
             </div>
           </div>
         </div>
       </div>
  
-      <!-- 3 -->
       <div class="card">
         <div class="card-inner">
           <div class="card-header">
             <div class="card-icon">
               <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
             </div>
-            <span class="card-title">Projekte</span>
+            <span class="card-title">Projects</span>
             <svg class="card-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
           </div>
           <div class="card-body">
             <p>
-              Ich habe an verschiedenen Web-Apps, Open-Source-Tools und
-              Design-Experimenten gearbeitet. Jedes Projekt war eine Chance,
-              neue Technologien zu lernen und kreative Lösungen zu entwickeln.
-              Schau dir meine Arbeiten auf GitHub an.
+              Explore my latest work, ranging from Web3 applications to open-source contributions. 
+              You can find all my active projects on my GitHub profile.
             </p>
             <div class="tag-list">
-              <span class="tag">Web Apps</span>
-              <span class="tag">Open Source</span>
-              <span class="tag">GitHub</span>
+              <a href="https://github.com/gioavnniDiNunzio" target="_blank" class="tag">Visit GitHub</a>
             </div>
           </div>
         </div>
       </div>
  
-      <!-- 4 -->
       <div class="card">
         <div class="card-inner">
           <div class="card-header">
             <div class="card-icon">
               <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </div>
-            <span class="card-title">Kontakt</span>
+            <span class="card-title">Contact</span>
             <svg class="card-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
           </div>
           <div class="card-body">
             <p>
-              Du hast ein spannendes Projekt oder möchtest einfach Hallo sagen?
-              Ich freue mich über jede Nachricht. Schreib mir eine E-Mail oder
-              verbinde dich mit mir auf LinkedIn — ich melde mich so schnell
-              wie möglich zurück.
+              Feel free to reach out if you'd like to collaborate or chat about technology.
             </p>
             <div class="tag-list">
-              <span class="tag">hallo@deinname.ch</span>
-              <span class="tag">LinkedIn</span>
-              <span class="tag">Twitter / X</span>
+              <a href="https://www.linkedin.com/in/DEIN-PROFIL" target="_blank" class="tag highlight">LinkedIn</a>
+              <a href="mailto:giannidinunzio3@gmail.ch" class="tag">Email</a>
             </div>
           </div>
         </div>
@@ -364,7 +314,7 @@
     </section>
  
     <footer class="footer">
-      &copy; 2026 &nbsp;·&nbsp; Dein Name &nbsp;·&nbsp; Alle Rechte vorbehalten
+      &copy; 2026 &nbsp;·&nbsp; Giovanni Di Nunzio
     </footer>
   </div>
 </body>
